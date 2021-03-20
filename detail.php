@@ -80,18 +80,20 @@ echo mysqli_error( $dbconnect );
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card mt-4">
-                        <img class="card-img-top img-fluid" src="<?php echo $row['p_image'] ?>" alt="">
+                        <img class="card-img-top img-fluid" src="<?php echo $row['p_image_one'] ?>" alt="">
                         <div class="card-body">
                             <h3 class="card-title">
                                 <?php echo $row['p_name']; ?>
+                                <?php echo $row['p_colour']; ?>
                             </h3>
                             <h4>£
-                                <?php echo $row['p_price']; ?>
+                                <?php echo $row['p_sale_price']; ?>
                             </h4>
                             <p class="card-text">
-                                <?php echo $row['p_detail'] ?>
+                                <?php echo $row['p_description'] ?>
                             </p>
-                
+               
+
                             <a href="#" id="addtocartlink" class="btn btn-success" alt="<?php echo $row['product_id'] ?>">add to cart</a>
                         
                         <?php 
