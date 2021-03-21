@@ -65,7 +65,7 @@ $JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_c
 							<div class="card h-100 border-primary mb-3">
                                 
 								<div class="image-container">
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image'] ?>" alt=""></a>
+									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" style="width:100%; height:100%;" src="<?php echo $row['p_image_thumb'] ?>" alt=""></a>
 								</div>
 								<div class="card-body">
 									<h4 class="card-title">
@@ -74,13 +74,13 @@ $JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_c
 										</a>
 									</h4>
 <h5>£
-										<?php echo $row['p_price']; ?>
+										<?php echo $row['p_sale+price']; ?>
 									</h5>
 									<h5>
 										<?php echo $row['p_category']; ?>
 									</h5>
 									<p class="card-text">
-										<?php echo $row['p_detail-thumb'] ?>
+										<?php echo $row['p_image_thumb'] ?>
 									</p>
 								
 								</div>

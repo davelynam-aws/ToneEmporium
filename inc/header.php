@@ -69,6 +69,7 @@ if (isset($_GET[ 'bathroom'] )) {
                                 include $_SERVER['DOCUMENT_ROOT'].'/inc/userHeader.inc.php';
                             ?>
                         </div>
+
                         <li class="nav-item active">
                             <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                         </li>
@@ -100,10 +101,14 @@ if (isset($_GET[ 'bathroom'] )) {
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.php"><h1>Tutto</h1></a>
+                <div style="width:20%; display:block;margin:auto;">
+                     <a class="navbar-brand" href="../index.php"><img src="/images/main/Logo/logowhitelong.png" style="height:100%; width:100%;" /></a>
+                </div>
+               
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
+                    <!--   
+                    <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" href="../listings.php">All Sweets<span class="sr-only">(current)</span></a>
                             </li>
@@ -124,6 +129,7 @@ if (isset($_GET[ 'bathroom'] )) {
                             </li>
                             
                         </ul>
+                        -->
                         <!--login & signup buttons-->
                         <div id="header-user-control">
                             <?php
@@ -136,7 +142,7 @@ if (isset($_GET[ 'bathroom'] )) {
                     <div class="nav-item mr-auto">
                        <div class="basket-container">
 
-                            <div class="btn btn-success ml-2" id="header-cart-btn"><i class="fas fa-shopping-basket"></i> <div class="basket-number"><span id="headercart">-</span></div></div>
+                            <div class="btn btn-success ml-2" id="header-cart-btn"><i class="fas fa-shopping-cart"></i> <div class="basket-number"><span id="headercart">-</span></div></div>
 
                             <div class="basket-drop">
                                 <div class="basket-title">

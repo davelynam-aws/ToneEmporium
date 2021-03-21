@@ -67,12 +67,20 @@ function confirmChoice(productId) {
 //This gets the ID from the database and echos out the result. 
 $id = $_GET['id'];
 $result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `product_id`={$id}");
+
 echo mysqli_error( $dbconnect );
 
 ?>
 
         <!--Loop through each row from results -->
         <?php while ( $row = mysqli_fetch_array( $result ) )  { ?>
+
+        <?PHP
+        // Get related specs for product.
+        $specresult = mysqli_query( $dbconnect, "SELECT * FROM `specification` WHERE `specification_id`={$row['p_spec_id']}");
+
+        ?>
+
     <!-- Page Content -->
         <div class="container">
            <div class="cartdisplaydiv">
@@ -80,7 +88,7 @@ echo mysqli_error( $dbconnect );
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card mt-4">
-                        <img class="card-img-top img-fluid" src="<?php echo $row['p_image_one'] ?>" alt="">
+                        <img class="card-img-top img-fluid" src="<?php echo $row['p_image_thumb'] ?>" alt="">
                         <div class="card-body">
                             <h3 class="card-title">
                                 <?php echo $row['p_name']; ?>
@@ -92,7 +100,66 @@ echo mysqli_error( $dbconnect );
                             <p class="card-text">
                                 <?php echo $row['p_description'] ?>
                             </p>
+
+                                                  
+                            <H3>Specification</H3>
+                            <?php
+			// Loop through each row from results
+			while ( $specrow = mysqli_fetch_array( $specresult ) ) {
+				?>
                
+                                               <p class="card-text">Body: 
+                                    <?php echo $specrow['s_body'] ?>
+                                </p>
+                                          
+                                               <p class="card-text">Neck: 
+                                    <?php echo $specrow['s_neck'] ?>
+                                </p>
+                                          
+                                               <p class="card-text">Neck Shape: 
+                                    <?php echo $specrow['s_neck_shape'] ?>
+                                </p>
+                                          
+                                               <p class="card-text">Fingerboard: 
+                                    <?php echo $specrow['s_fingerboard'] ?>
+                                </p>
+                                          
+                                               <p class="card-text">Scale: 
+                                    <?php echo $specrow['s_scale'] ?>
+                                </p>
+                                          
+                                               <p class="card-text">Radius: 
+                                    <?php echo $specrow['s_radius'] ?>
+                                </p>
+                                          
+                                               <p class="card-text">Frets: 
+                                    <?php echo $specrow['s_frets'] ?>
+                                </p>
+                                          
+                                               <p class="card-text">Nut: 
+                                    <?php echo $specrow['s_nut'] ?>
+                                </p>
+                                                          <p class="card-text">Nut Width: 
+                                    <?php echo $specrow['s_nut_width'] ?>
+                                </p>
+                                                          <p class="card-text">Pickups: 
+                                    <?php echo $specrow['s_pickups'] ?>
+                                </p>
+                                                          <p class="card-text">Controls: 
+                                    <?php echo $specrow['s_controls'] ?>
+                                </p>
+                                                              <p class="card-text">Bridge: 
+                                    <?php echo $specrow['s_bridge'] ?>
+                                </p>
+                                       <p class="card-text">Tuners:                                                       <p class="card-text">Body Material: 
+                                    <?php echo $specrow['s_tuners'] ?>
+                                </p>
+                                </span>
+              	<?php }; ?>
+
+
+ 
+                         
 
                             <a href="#" id="addtocartlink" class="btn btn-success" alt="<?php echo $row['product_id'] ?>">add to cart</a>
                         

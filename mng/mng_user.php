@@ -140,7 +140,7 @@ if ( $_POST[ 'mode' ] == "login" ){
 			exit();
 		}else{
 		$response['message'] = "There was an issue with your username and password";
-		$response['message'] = $sql;
+	
 		echo json_encode($response);
 
 		exit();
