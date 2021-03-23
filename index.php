@@ -62,7 +62,7 @@ $JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_c
 			while ( $row = mysqli_fetch_array( $general_result ) ) {
 				?>
 						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100 border-primary mb-3">
+							<div class="card h-100 border-primary mb-3" style="width:215px;">
                                 
 								<div class="image-container">
 									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" style="width:100%; height:100%;" src="<?php echo $row['p_image_thumb'] ?>" alt=""></a>
@@ -74,7 +74,7 @@ $JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_c
 										</a>
 									</h4>
 <h5>£
-										<?php echo $row['p_sale+price']; ?>
+										<?php echo $row['p_sale_price']; ?>
 									</h5>
 									<h5>
 										<?php echo $row['p_category']; ?>
@@ -97,189 +97,7 @@ $JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_c
 				</div>
 		
 		
-                
-				<div class="home-title-container"> 
-				<div class="home-featured-title">Featured Jars Of Joy</div>
-				<a class="float-right" href="/listings.php?cat=Jars Of Joy"><small>VIEW ALL</small></a>
-					<div style="clear:both"></div>
-				</div>
-					<div class="row">
-					<?php
-			// Loop through each row from results
-			while ( $row = mysqli_fetch_array( $JarsOfJoy_result ) ) {
-				?>
-						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="image-container">
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image'] ?>" alt=""></a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">
-										<a href="/detail.php?id=<?php echo $row['product_id'] ?>">
-											<?php echo $row['p_name']; ?>
-										</a>
-									</h4>
-
-									<h5>£
-										<?php echo $row['p_price']; ?>
-									</h5>
-									<h5>
-										<?php echo $row['p_category']; ?>
-									</h5>
-									<p class="card-text">
-										<?php echo $row['p_detail-thumb'] ?>
-									</p>
-								</div>
-								<div class="card-footer">
-									<div class="btn btn-success quickAdd" data="<?php echo $row['product_id'] ?>">Add <i class="fa fa-shopping-basket"></i></div>
-									<!--This is the see product button-->
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>" class="btn btn-primary float-right">See Product</a>
-								</div>
-							</div>
-						</div>
-						<?php }; ?>
-						<!--Close while loop-->
-				</div>
-
-
-				<div class="home-title-container"> 
-				<div class="home-featured-title">Featured Boiled Sweets</div>
-				<a class="float-right" href="/listings.php?cat=Boiled Sweets"><small>VIEW ALL</small></a>
-					<div style="clear:both"></div>
-				</div>
-					<div class="row">
-					<?php
-			// Loop through each row from results
-			while ( $row = mysqli_fetch_array( $boiledSweets_result ) ) {
-				?>
-						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="image-container">
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image'] ?>" alt=""></a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">
-										<a href="/detail.php?id=<?php echo $row['product_id'] ?>">
-											<?php echo $row['p_name']; ?>
-										</a>
-									</h4>
-
-									<h5>£
-										<?php echo $row['p_price']; ?>
-									</h5>
-									<h5>
-										<?php echo $row['p_category']; ?>
-									</h5>
-									<p class="card-text">
-										<?php echo $row['p_detail-thumb'] ?>
-									</p>
-								</div>
-								<div class="card-footer">
-									<div class="btn btn-success quickAdd" data="<?php echo $row['product_id'] ?>">Add <i class="fa fa-shopping-basket"></i></div>
-									<!--This is the see product button-->
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>" class="btn btn-primary float-right">See Product</a>
-								</div>
-							</div>
-						</div>
-						<?php }; ?>
-						<!--Close while loop-->
-				</div>
-
-
-
-
-
-			<div class="home-title-container"> 
-				<div class="home-featured-title">Featured Toffee and Fudge</div>
-				<a class="float-right" href="/listings.php?cat=Toffee and Fudge"><small>VIEW ALL</small></a>
-					<div style="clear:both"></div>
-				</div>
-				<div class="row">
-					<?php
-			// Loop through each row from results
-			while ( $row = mysqli_fetch_array( $ToffeeandFudge_result ) ) {
-				?>
-						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="image-container">
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image'] ?>" alt=""></a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">
-										<a href="/detail.php?id=<?php echo $row['product_id'] ?>">
-											<?php echo $row['p_name']; ?>
-										</a>
-									</h4>
-
-									<h5>£
-										<?php echo $row['p_price']; ?>
-									</h5>
-									<h5>
-										<?php echo $row['p_category']; ?>
-									</h5>
-									<p class="card-text">
-										<?php echo $row['p_detail-thumb'] ?>
-									</p>
-								</div>
-								<div class="card-footer">
-									<div class="btn btn-success quickAdd" data="<?php echo $row['product_id'] ?>">Add <i class="fa fa-shopping-basket"></i></div>
-									<!--This is the see product button-->
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>" class="btn btn-primary float-right">See Product</a>
-								</div>
-							</div>
-						</div>
-						<?php }; ?>
-						<!--Close while loop-->
-				</div>
-
-
-
-
-
-			<div class="home-title-container"> 
-				<div class="home-featured-title">Featured Jelly Sweets</div>
-				<a class="float-right" href="/listings.php?cat=Jelly Sweets"><small>VIEW ALL</small></a>
-					<div style="clear:both"></div>
-				</div>
-				<div class="row">
-					<?php
-			// Loop through each row from results
-			while ( $row = mysqli_fetch_array( $JellySweets_result ) ) {
-				?>
-						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100">
-								<div class="image-container">
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image'] ?>" alt=""></a>
-								</div>
-								<div class="card-body">
-									<h4 class="card-title">
-										<a href="/detail.php?id=<?php echo $row['product_id'] ?>">
-											<?php echo $row['p_name']; ?>
-										</a>
-									</h4>
-
-									<h5>£
-										<?php echo $row['p_price']; ?>
-									</h5>
-									<h5>
-										<?php echo $row['p_category']; ?>
-									</h5>
-									<p class="card-text">
-										<?php echo $row['p_detail-thumb'] ?>
-									</p>
-								</div>
-								<div class="card-footer">
-									<div class="btn btn-success quickAdd" data="<?php echo $row['product_id'] ?>">Add <i class="fa fa-shopping-basket"></i></div>
-									<!--This is the see product button-->
-									<a href="/detail.php?id=<?php echo $row['product_id'] ?>" class="btn btn-primary float-right">See Product</a>
-								</div>
-							</div>
-						</div>
-						<?php }; ?>
-						<!--Close while loop-->
-				</div>
-
-
+              
 
 
 

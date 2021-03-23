@@ -113,7 +113,7 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` ORDER BY RA
 							<div class="image-container">
 
 								<!--This pull the image on tpo the page from the database-->
-								<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image'] ?>" alt=""></a>
+								<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image_thumb'] ?>" alt=""></a>
 							</div>
 
 
@@ -126,13 +126,13 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` ORDER BY RA
 
 
 								<h5>£
-									<?php echo $row['p_price']; ?>
+									<?php echo $row['p_sale_price']; ?>
 								</h5>
 								<h5>
 									<?php echo $row['p_category']; ?>
 								</h5>
 								<p class="card-text">
-									<?php echo $row['p_detail-thumb'] ?>
+									<?php echo $row['p_image_thumb'] ?>
 								</p>
 							</div>
 							<div class="card-footer">
