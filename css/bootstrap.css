@@ -547,6 +547,8 @@ pre code {
 }
 
 .container {
+  display:flex;   
+  justify-items:center;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;

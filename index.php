@@ -7,11 +7,12 @@ include('inc/dbconnect.inc.php');
 // include the header file
 include('inc/header.php');
 // include the Breadcrumbs file
-include('inc/dynamicBreadcrumbs.php');
+//include('inc/dynamicBreadcrumbs.php');
 // include the login Script
 include('inc/inc_loginform.php');
 
 ?>
+<!--
 	<div class="container" align="center">
 		<div class="header-slider">
 			<div class="header-slider-image">
@@ -37,17 +38,21 @@ include('inc/inc_loginform.php');
 			
 		</div>
 	</div>
+	-->
 
 	<?php
 
 
 // Display All Products
-$general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` ORDER BY RAND() LIMIT 3" );
+//$general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` ORDER BY RAND() LIMIT 3" );
 
-$boiledSweets_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Boiled Sweets' LIMIT 3" );
-$ToffeeandFudge_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Toffee and Fudge' LIMIT 3" );
-$JellySweets_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Jelly Sweets' LIMIT 3" );
-$JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_category`='Jars of Joy' LIMIT 3");
+$general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category` != 'Accessories'" );
+
+
+//$boiledSweets_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Boiled Sweets' LIMIT 3" );
+//$ToffeeandFudge_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Toffee and Fudge' LIMIT 3" );
+//$JellySweets_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Jelly Sweets' LIMIT 3" );
+//$JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_category`='Jars of Joy' LIMIT 3");
 ?>
 
 		<!-- Display the product detail in the container -->
@@ -62,26 +67,61 @@ $JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_c
 			while ( $row = mysqli_fetch_array( $general_result ) ) {
 				?>
 						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100 border-primary mb-3" style="width:215px;">
+							<div class="card h-100 border-primary mb-3">
                                 
 								<div class="image-container">
 									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" style="width:100%; height:100%;" src="<?php echo $row['p_image_thumb'] ?>" alt=""></a>
 								</div>
-								<div class="card-body">
-									<h4 class="card-title">
-										<a href="/detail.php?id=<?php echo $row['product_id'] ?>">
+								<div class="card-body" style="text-align: center;">
+					
+									<!--This if statement ensures the spacing of the card objects are aligned
+										when the product name is less than or equal to 24 characters long, which
+										would mean the product name does not span two rows.-->
+									<?php if(strlen($row['p_name']) <= 24) : ?>
+													<h4 class="card-title" style="margin-bottom: 41px;">
+										<a style="color:
+												  #707070; font-size: 20px;
+												 "href="/detail.php?id=<?php echo $row['product_id'] ?>">
 											<?php echo $row['p_name']; ?>
 										</a>
 									</h4>
-<h5>£
+  
+									
+									<?php else : ?>
+													<h4 class="card-title">
+										<a style="color: 
+												  #707070; font-size: 20px; 
+												 " href="/detail.php?id=<?php echo $row['product_id'] ?>">
+											<?php echo $row['p_name']; ?>
+										</a>
+									</h4>
+									
+<?php endif; ?>
+									
+									
+									 <p class="card-text">
+										<?php echo $row['p_colour'] ?>
+									</p>
+									<button class="btn" style="background-color: #8A3617; color: #fff; width: 100%;">
+									ADD TO CART
+									</button>
+									<p class="card-text" style="text-decoration: line-through;">
+										RRP <?php echo  $row['p_rrp'] ?>
+									</P>
+									<h5>£
 										<?php echo $row['p_sale_price']; ?>
 									</h5>
+									<p>
+										Saving of £<?php echo $row['p_rrp'] - $row['p_sale_price']; ?>
+									</p>
+									<!--
 									<h5>
 										<?php echo $row['p_category']; ?>
 									</h5>
 									<p class="card-text">
-										<?php echo $row['p_image_thumb'] ?>
+										<?php echo $row['p_image_thumb']; ?>
 									</p>
+									-->
 								
 								</div>
 								<div class="card-footer bg-transparent border-primary">

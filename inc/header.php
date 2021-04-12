@@ -25,9 +25,9 @@ if (isset($_GET[ 'bathroom'] )) {
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <title>Tutto | Amore </title>
+        <title>Tone Emporium | The Home Of Tone </title>
         <!-- Favicon -->
-        <link rel="icon" type="icon/png" href="/images/logo.png">
+        <link rel="icon" type="icon/png" href="/images/Logo/favicon.png">
 
         <!--JQuery CSS-->
         <link rel="stylesheet" type="text/css" href="../js/jquery-ui.css" />
@@ -64,12 +64,13 @@ if (isset($_GET[ 'bathroom'] )) {
 
 <div class="mobile-nav-container">
                     <ul class="navbar-nav mr-auto">
+                    <!--
                         <div id="mobile-header-user-control">
                             <?php
                                 include $_SERVER['DOCUMENT_ROOT'].'/inc/userHeader.inc.php';
                             ?>
                         </div>
-
+                        -->
                         <li class="nav-item active">
                             <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                         </li>
@@ -80,15 +81,23 @@ if (isset($_GET[ 'bathroom'] )) {
                         <li class="nav-item ">
                             <a class="nav-link " href="#" id="navbarDropdown" >Catagories</a>
                             <div class="" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/listings.php?cat=Boiled Sweets">Boiled Sweets</a>
-                                <a class="dropdown-item" href="/listings.php?cat=Jelly Sweets">Jelly Sweets</a>
-                                <a class="dropdown-item" href="/listings.php?cat=Toffee and Fudge">Toffee and Fudge</a>
-                                <a class="dropdown-item" href="/listings.php?cat=Bon Bons">Bon Bons</a>
-                                <a class="dropdown-item" href="/listings.php?cat=Chocolate">Chocolate</a>
-                                <a class="dropdown-item" href="/listings.php?cat=Jars Of Joy">Jars Of Joy</a>
-                                <a class="dropdown-item" href="/listings.php?cat=Lollipop">Lollipops</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Special Offers</a>
+                                <a class="dropdown-item" href="/listings.php?cat=Boiled Sweets">Strat Style</a>
+                                <a class="dropdown-item" href="/listings.php?cat=Jelly Sweets">Tele Style</a>
+                                <a class="dropdown-item" href="/listings.php?cat=Toffee and Fudge">Single Cutaway</a>
+                                <a class="dropdown-item" href="/listings.php?cat=Bon Bons">Double Cutaway</a>
+                                <a class="dropdown-item" href="/listings.php?cat=Chocolate">Offset</a>
+                                <a class="dropdown-item" href="/listings.php?cat=Jars Of Joy">Hollow Body</a>
+                                <a class="dropdown-item" href="/listings.php?cat=Lollipop">Accessories</a>
+                                <div class="dropdown-divider">
+									
+								</div>
+								<!--
+                                <a class="dropdown-item" href="#">News</a>
+                                 <a class="dropdown-item" href="#">Our Stores</a>
+                                  <a class="dropdown-item" href="#">Contact Us</a>
+                                  <a class="dropdown-item" href="#">Sign In</a>
+                                  <a class="dropdown-item" href="#">01253 666 666</a>
+								-->
                             </div>
                         </li>
                         
@@ -100,12 +109,18 @@ if (isset($_GET[ 'bathroom'] )) {
             <div class="sticky-footer">
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+                           <div>
+                     <a href="../index.php" style="color: #fff"><i class="fas fa-shipping-fast"></i> Free Next Day Delivery</a>
+                </div>
                 <div class="container">
-                <div style="width:20%; display:block;margin:auto;">
+ 
+
+                <div style="width:20%;">
                      <a class="navbar-brand" href="../index.php"><img src="/images/main/Logo/logowhitelong.png" style="height:100%; width:100%;" /></a>
                 </div>
                
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!--   
                     <ul class="navbar-nav mr-auto">
@@ -131,11 +146,13 @@ if (isset($_GET[ 'bathroom'] )) {
                         </ul>
                         -->
                         <!--login & signup buttons-->
+                        <!--
                         <div id="header-user-control">
                             <?php
                                 include $_SERVER['DOCUMENT_ROOT'].'/inc/userHeader.inc.php';
                             ?>
                         </div>
+                        -->
                     </div>
                      
                             
@@ -169,8 +186,10 @@ if (isset($_GET[ 'bathroom'] )) {
 
             <!-- Mobile header -->
             <header class="mobile-header">
-                <div class="mobile-header-title">Tutto</div>
-
+                <!--<div class="mobile-header-title">Tutto</div>-->
+                <div style="width:20%;">
+                     <a class="navbar-brand" href="../index.php"><img src="/images/main/Logo/logowhitelong.png" style="height:100%; width:100%;" /></a>
+                </div>
                 <div id="mobile-nav-open">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -178,6 +197,7 @@ if (isset($_GET[ 'bathroom'] )) {
 
             <!-- End of mobile header -->
 
+            
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog login-pop-container">
                     <!-- form card login -->
@@ -248,6 +268,7 @@ if (isset($_GET[ 'bathroom'] )) {
                     <!-- /form card login -->
                 </div>
             </div>
+				<!--
             <div class="header-search">
                 <div class="container">
                     <div class="row">
@@ -265,10 +286,11 @@ if (isset($_GET[ 'bathroom'] )) {
                         <!-- This tag will inject the cart display 
                         <div class="cartdisplaydiv"></div></br>
                     </div>-->
+				<!--
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <?php
              if (isset($_GET['registerSuccess']) || isset($_GET['registerError'])){
             ?>

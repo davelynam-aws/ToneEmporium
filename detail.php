@@ -102,12 +102,12 @@ echo mysqli_error( $dbconnect );
                             </p>
 
                                                   
-                            <H3>Specification</H3>
+                        
                             <?php
 			// Loop through each row from results
 			while ( $specrow = mysqli_fetch_array( $specresult ) ) {
 				?>
-               
+                   <H3>Specification</H3>
                                                <p class="card-text">Body: 
                                     <?php echo $specrow['s_body'] ?>
                                 </p>
