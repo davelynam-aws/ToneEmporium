@@ -60,7 +60,7 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_ca
 			<div class="search-container">
 			
 				<div class="card">
-					<h5 class="card-header card text-white bg-primary mb-3">Featured Products</h5>
+					<h5 class="card-header card text-white mb-3" style="background-color: #D76339;">Featured Products</h5>
 					<div class="row pl-3 pr-3">
 <?php
 			// Loop through each row from results
@@ -77,8 +77,8 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_ca
 									<!--This if statement ensures the spacing of the card objects are aligned
 										when the product name is less than or equal to 24 characters long, which
 										would mean the product name does not span two rows.-->
-									<?php if(strlen($row['p_name']) <= 24) : ?>
-													<h4 class="card-title" style="margin-bottom: 41px;">
+							
+													<h4 class="card-title">
 										<a style="color:
 												  #707070; font-size: 20px;
 												 "href="/detail.php?id=<?php echo $row['product_id'] ?>">
@@ -86,17 +86,7 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_ca
 										</a>
 									</h4>
   
-									
-									<?php else : ?>
-													<h4 class="card-title">
-										<a style="color: 
-												  #707070; font-size: 20px; 
-												 " href="/detail.php?id=<?php echo $row['product_id'] ?>">
-											<?php echo $row['p_name']; ?>
-										</a>
-									</h4>
-									
-<?php endif; ?>
+			
 									
 									
 									 <p class="card-text">
@@ -105,15 +95,28 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_ca
 									<button class="btn" style="background-color: #8A3617; color: #fff; width: 100%;">
 									ADD TO CART
 									</button>
-									<p class="card-text" style="text-decoration: line-through;">
-										RRP <?php echo  $row['p_rrp'] ?>
-									</P>
-									<h5>£
+									
+									<h4 class="text-success" style="margin-top: 20px;">
+										In Stock
+									</h4>
+									
+									<h1>£
 										<?php echo $row['p_sale_price']; ?>
-									</h5>
-									<p>
-										Saving of £<?php echo $row['p_rrp'] - $row['p_sale_price']; ?>
-									</p>
+									</h1>
+									
+									<div class="row">
+									<div class="card-text col-md-6" style="text-decoration: line-through;">
+										RRP <?php echo  $row['p_rrp'] ?>
+									</div>
+									
+									<div class="row text-success col-md-6">
+										Save £<?php echo $row['p_rrp'] - $row['p_sale_price']; ?>
+									</div>
+				
+									</div>
+									
+									
+								
 									<!--
 									<h5>
 										<?php echo $row['p_category']; ?>
