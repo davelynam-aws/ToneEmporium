@@ -4346,6 +4346,12 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
+.retro-border {
+    background-color: #D76339;
+    background-clip: border-box;
+    border: 5px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
 .card > hr {
   margin-right: 0;
   margin-left: 0;
