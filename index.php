@@ -9,42 +9,27 @@ include('inc/header.php');
 // include the Breadcrumbs file
 //include('inc/dynamicBreadcrumbs.php');
 // include the login Script
-//include('inc/inc_loginform.php');
+include('inc/inc_loginform.php');
 
 include('inc/category_nav.php');
 
 ?>
 
 <div class="container" align="center">
-		<div class="header-slider">
-			<div class="header-slider-image">
-				<img class="d-block img-fluid" src="images/Global/Gibson Custom Shop 67 Hero.png" alt="Gibson Customer Shop 67">
-			</div>
-			<div class="header-slider-image">
-				<img class="d-block img-fluid" src="images/Global/Fender 60s Strat Hero.png" alt="Fender American Original 60s Stratocaster">
-			</div>
-		
-			<div class="header-slider-image">
-				<img class="d-block img-fluid" src="images/Global/LSL Badbone Hero.png" alt="LSL Instruments Bad Bone">
-			</div>
-				<!--
-	        <div class="header-slider-image">
-				<img class="d-block img-fluid" src="img/Banner4.png" alt="Wow!">
-			</div>
-	       <div class="header-slider-image">
-				<img class="d-block img-fluid" src="img/Banner5.png" alt="Yummy!">
-			</div>
-	         <div class="header-slider-image">
-				<img class="d-block img-fluid" src="img/Banner6.png" alt="Yummy!">
-			</div>-->
-
-
-			
+	<div class="header-slider">
+		<div class="header-slider-image">
+			<img class="d-block img-fluid" src="images/Global/Gibson Custom Shop 67 Hero.png" alt="Gibson Customer Shop 67">
 		</div>
+		<div class="header-slider-image">
+			<img class="d-block img-fluid" src="images/Global/Fender 60s Strat Hero.png" alt="Fender American Original 60s Stratocaster">
+		</div>
+		<div class="header-slider-image">
+			<img class="d-block img-fluid" src="images/Global/LSL Badbone Hero.png" alt="LSL Instruments Bad Bone">
+		</div>			
 	</div>
+</div>
 	
-
-	<?php
+<?php
 
 
 // Display All Products
@@ -52,11 +37,6 @@ include('inc/category_nav.php');
 
 $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category` != 'Accessories'" );
 
-
-//$boiledSweets_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Boiled Sweets' LIMIT 3" );
-//$ToffeeandFudge_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Toffee and Fudge' LIMIT 3" );
-//$JellySweets_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_category`='Jelly Sweets' LIMIT 3" );
-//$JarsOfJoy_result = mysqli_query($dbconnect, "SELECT * FROM `product` WHERE `p_category`='Jars of Joy' LIMIT 3");
 ?>
 
 		<!-- Display the product detail in the container -->
@@ -96,7 +76,7 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_ca
 									 <p class="card-text">
 										<?php echo $row['p_colour'] ?>
 									</p>
-									<button class="btn" style="background-color: #8A3617; color: #fff; width: 100%;">
+									<button class="btn" style="background-color: #8A3617; color: #fff; width: 100%;" data="<?php echo $row['product_id'] ?>">
 									ADD TO CART
 									</button>
 									

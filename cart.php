@@ -11,6 +11,8 @@ include( 'inc/dynamicBreadcrumbs.php' );
 // include the Login Form 
 include( 'inc/inc_loginform.php' );
 
+include( 'inc/category_nav.php');
+
 global $dbconnect; //Conect to the database
 
 ?>
@@ -70,7 +72,7 @@ if (isset($_SESSION['cart']) && $_SESSION['cart'] !== "") { //if there is any it
 
 							<div class="row cart-row">
 								<div class="col-2">
-									<img class="cart-image" src="<?= $cartRow['p_image'] ?>" alt="">
+									<img class="cart-image" src="<?= $cartRow['p_image_thumb'] ?>" alt="">
 								</div>
 								<div class="col-4">
 									<div class="cart-product-name">
@@ -78,8 +80,11 @@ if (isset($_SESSION['cart']) && $_SESSION['cart'] !== "") { //if there is any it
 											<?= $cartRow['p_name'] ?>
 										</a>
 									</div>
+									<div class="cart-product-name">
+										<?= $cartRow['p_colour'] ?>
+									</div>
 									<div class="cart-product-cat">
-										<?= $cartRow['p_detail-thumb'] ?>
+										<?= $cartRow['p_category'] ?>
 									</div>
 								</div>
 
@@ -90,7 +95,7 @@ if (isset($_SESSION['cart']) && $_SESSION['cart'] !== "") { //if there is any it
 								</div>
 								<div class="col-2 cart-price">
 									£
-									<?= number_format(($cartRow['p_price'] * $qty),2, '.', ' ') ?>
+									<?= number_format(($cartRow['p_sale_price'] * $qty),2, '.', ' ') ?>
 								</div>
 								<div class="col-2">
 
@@ -103,7 +108,7 @@ if (isset($_SESSION['cart']) && $_SESSION['cart'] !== "") { //if there is any it
 
 
 							<?php
-					$total += $cartRow['p_price'] * $qty;
+					$total += $cartRow['p_sale_price'] * $qty;
 				} //END WHILE
 			} //End IF
 		} //End Foreach 
@@ -132,7 +137,7 @@ if (isset($_SESSION['cart']) && $_SESSION['cart'] !== "") { //if there is any it
 					$cartresult = mysqli_query( $dbconnect, $sql );
 					while ( $cartRow = mysqli_fetch_array( $cartresult ) ) {
 						$name = $cartRow['p_name'];
-						$price = number_format(($cartRow['p_price'] * $qty), 2, '.', ' ');
+						$price = number_format(($cartRow['p_sale_price'] * $qty), 2, '.', ' ');
 
 						echo <<<END
 

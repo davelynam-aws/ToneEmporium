@@ -146,13 +146,13 @@ if (isset($_GET[ 'bathroom'] )) {
                         </ul>
                         -->
                         <!--login & signup buttons-->
-                        <!--
+                        
                         <div id="header-user-control">
                             <?php
                                 include $_SERVER['DOCUMENT_ROOT'].'/inc/userHeader.inc.php';
                             ?>
                         </div>
-                        -->
+                        
                     </div>
                      
                             

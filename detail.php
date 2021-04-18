@@ -12,7 +12,7 @@ include('inc/inc_loginform.php');
 // include Cart Display
 
 
-include('inc/inc_category_menu.php');
+include('inc/category_nav.php');
 ?>
 
     <script type="text/javascript">
