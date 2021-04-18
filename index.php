@@ -9,21 +9,25 @@ include('inc/header.php');
 // include the Breadcrumbs file
 //include('inc/dynamicBreadcrumbs.php');
 // include the login Script
-include('inc/inc_loginform.php');
+//include('inc/inc_loginform.php');
+
+include('inc/category_nav.php');
 
 ?>
-<!--
-	<div class="container" align="center">
+
+<div class="container" align="center">
 		<div class="header-slider">
 			<div class="header-slider-image">
-				<img class="d-block img-fluid" src="img/Banner1.png" alt="Smarties">
+				<img class="d-block img-fluid" src="images/Global/Gibson Custom Shop 67 Hero.png" alt="Gibson Customer Shop 67">
 			</div>
 			<div class="header-slider-image">
-				<img class="d-block img-fluid" src="img/Banner2.png" alt="Jelly Bean">
+				<img class="d-block img-fluid" src="images/Global/Fender 60s Strat Hero.png" alt="Fender American Original 60s Stratocaster">
 			</div>
+		
 			<div class="header-slider-image">
-				<img class="d-block img-fluid" src="img/Banner3.png" alt="Heart">
+				<img class="d-block img-fluid" src="images/Global/LSL Badbone Hero.png" alt="LSL Instruments Bad Bone">
 			</div>
+				<!--
 	        <div class="header-slider-image">
 				<img class="d-block img-fluid" src="img/Banner4.png" alt="Wow!">
 			</div>
@@ -32,13 +36,13 @@ include('inc/inc_loginform.php');
 			</div>
 	         <div class="header-slider-image">
 				<img class="d-block img-fluid" src="img/Banner6.png" alt="Yummy!">
-			</div>
+			</div>-->
 
 
 			
 		</div>
 	</div>
-	-->
+	
 
 	<?php
 

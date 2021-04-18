@@ -321,7 +321,7 @@ table {
 }
 .header-slider .header-slider-image {
   width: 100%;
-  max-height: 300px;
+  max-height: 500px;
   overflow: hidden;
 }
 .header-slider .header-slider-image img {
