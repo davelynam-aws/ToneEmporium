@@ -4,7 +4,7 @@ session_start();
 // include database connection
 include('inc/dbconnect.inc.php' );
 // include the header file
-include('inc/header.php');
+include('inc/newheader.php');
 // include the Breadcrumbs file
 //include('inc/dynamicBreadcrumbs.php');
 // include the Login Form 
@@ -12,7 +12,7 @@ include('inc/inc_loginform.php');
 // include Cart Display
 
 
-include('inc/category_nav.php');
+//include('inc/category_nav.php');
 ?>
 
     <script type="text/javascript">

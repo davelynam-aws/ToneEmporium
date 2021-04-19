@@ -108,14 +108,29 @@ if (isset($_GET[ 'bathroom'] )) {
         <div class="global-container">
             <div class="sticky-footer">
             <!-- Navigation -->
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-                           <div>
-                     <a href="../index.php" style="color: #fff"><i class="fas fa-shipping-fast"></i> Free Next Day Delivery</a>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
+				<div class="flex-container">
+					  <div class="float-left">
+                     <a href="../index.php" style="color: #fff">Free Next Day Delivery</a>
                 </div>
+					<div class="float-lg-right">
+					<a href="../index.php" style="color: #fff"></i>01253 666 666</a>
+				</div>
+					<div class="float-lg-right">
+					<a href="../index.php" style="color: #fff"></i>Contact Us</a>
+				</div>
+				<div class="float-lg-right">
+					<a href="../index.php" style="color: #fff"></i>Our Stores</a>
+				</div>
+									<div class="float-lg-right">
+					<a href="../index.php" style="color: #fff"></i>News</a>
+				</div>
+				</div>
+                         
                 <div class="container">
  
 
-                <div style="width:20%;">
+                <div style="width:400px;">
                      <a class="navbar-brand" href="../index.php"><img src="/images/main/Logo/logowhitelong.png" style="height:100%; width:100%;" /></a>
                 </div>
                
@@ -177,7 +192,6 @@ if (isset($_GET[ 'bathroom'] )) {
                                     <a href="/checkout1.php" class="btn btn-success">Checkout</a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
