@@ -110,14 +110,72 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` ORDER BY RA
 						<!--col-lg-4 = columnLarge4 | ColumnMedium6 | Meduim4 -->
 						<div class="card h-100">
 
+						
+							
+							
+							
+							
+							
+							
+							
 							<div class="image-container">
+									<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" style="width:100%; height:100%;" src="<?php echo $row['p_image_thumb'] ?>" alt=""></a>
+								</div>
+							
+							<div class="card-body" style="text-align: center;">
+					
+									<!--This if statement ensures the spacing of the card objects are aligned
+										when the product name is less than or equal to 24 characters long, which
+										would mean the product name does not span two rows.-->
+							
+													<h4 class="card-title">
+										<a style="color:
+												  #707070; font-size: 20px;
+												 "href="/detail.php?id=<?php echo $row['product_id'] ?>">
+											<?php echo $row['p_name']; ?>
+										</a>
+									</h4>
+  
+			
+									
+									
+									 <p class="card-text">
+										<?php echo $row['p_colour'] ?>
+									</p>
+									<button class="btn quickAdd card-footer" style="background-color: #8A3617; color: #fff; width: 100%;" data="<?php echo $row['product_id'] ?>">
+									ADD TO CART
+									</button>
+									
+									<h4 class="text-success" style="margin-top: 20px;">
+										In Stock
+									</h4>
+									
+									<h1>£
+										<?php echo $row['p_sale_price']; ?>
+									</h1>
+									
+									<div class="row">
+									<div class="card-text col-md-6" style="text-decoration: line-through;">
+										RRP <?php echo  $row['p_rrp'] ?>
+									</div>
+									
+									<div class="row text-success col-md-6">
+										Save £<?php echo $row['p_rrp'] - $row['p_sale_price']; ?>
+									</div>
+				
+									</div>
+															
+								
+								</div>
+							
+						<!--	<div class="image-container">-->
 
 								<!--This pull the image on tpo the page from the database-->
-								<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image_thumb'] ?>" alt=""></a>
-							</div>
+							<!--	<a href="/detail.php?id=<?php echo $row['product_id'] ?>"><img class="card-img-top" src="<?php echo $row['p_image_thumb'] ?>" alt=""></a>
+							</div>-->
 
 
-							<div class="card-body">
+							<!--<div class="card-body">
 								<h4 class="card-title">
 									<a href="/detail.php?id=<?php echo $row['product_id'] ?>">
 										<?php echo $row['p_name']; ?>
@@ -134,7 +192,7 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` ORDER BY RA
 								<p class="card-text">
 									<?php echo $row['p_image_thumb'] ?>
 								</p>
-							</div>
+							</div>-->
 							<div class="card-footer">
 								<!--This is the star ratings-->
 

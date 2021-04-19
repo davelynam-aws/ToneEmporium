@@ -64,41 +64,39 @@ if (isset($_GET[ 'bathroom'] )) {
 
 
 		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-			<div class="container-fluid">
-				<div class="col">
-					<a href="../index.php" style="color: #fff">Free Next Day Delivery</a>
+			<div class="container">
+				<div class="row col">
+					<a href="../index.php" style="color: #fff"><i class="fas fa-shipping-fast"></i> Free Next Day Delivery</a>
 				</div>
 				<div >
 					<a  href="../index.php" style="color: #fff; margin-right:5px;">News</a>
 				</div>
-				<div style="margin-left: 10px;">
-				|
+				<div style="margin-left: 10px; margin-right: 10px;">
+					|
 				</div>
 				<div >
 					<a href="../index.php" style="color: #fff">Our Stores</a>
 				</div>
+				<div style="margin-left: 10px; margin-right: 10px;">
+					|
+				</div>
 				<div >
 					<a href="../index.php" style="color: #fff">Contact Us</a>
 				</div>
-				<div style="margin">
+				<div style="margin-left: 10px; margin-right: 10px;">
+					|
+				</div>
+				<div >
 					<a href="../index.php" style="color: #fff">01253 666 666</a>
 				</div>
 			</div>
+	
 <!--
 			<div>
-				<a href="../index.php" style="color: #fff">Free Next Day Delivery</a>
-			</div>
-			<div class="form-inline">
-				<a href="../index.php" style="color: #fff">01253 666 666</a>
-			</div>
-			<div class="form-inline">
-				<a href="../index.php" style="color: #fff">Contact Us</a>
-			</div>
-			<div class="form-inline">
-				<a href="../index.php" style="color: #fff">Our Stores</a>
-			</div>
-			<div class="form-inline">
-				<a href="../index.php" style="color: #fff">News</a>
+				<div class="flex-container">
+					<a href="../index.php"><img style="width: 100%;height:100%;" src="../images/Logo/logowhitelong.png"/></a>
+				</div>
 			</div>
 -->
+
 		</nav>

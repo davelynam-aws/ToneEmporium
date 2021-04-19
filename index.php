@@ -76,7 +76,7 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_ca
 									 <p class="card-text">
 										<?php echo $row['p_colour'] ?>
 									</p>
-									<button class="btn" style="background-color: #8A3617; color: #fff; width: 100%;" data="<?php echo $row['product_id'] ?>">
+									<button class="btn quickAdd card-footer" style="background-color: #8A3617; color: #fff; width: 100%;" data="<?php echo $row['product_id'] ?>">
 									ADD TO CART
 									</button>
 									
@@ -98,17 +98,7 @@ $general_result = mysqli_query( $dbconnect, "SELECT * FROM `product` WHERE `p_ca
 									</div>
 				
 									</div>
-									
-									
-								
-									<!--
-									<h5>
-										<?php echo $row['p_category']; ?>
-									</h5>
-									<p class="card-text">
-										<?php echo $row['p_image_thumb']; ?>
-									</p>
-									-->
+															
 								
 								</div>
 								<div class="card-footer bg-transparent border-primary">
